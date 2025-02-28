@@ -1,4 +1,5 @@
 // Secuencia de entrada para las cards con más énfasis
+// Se anima la aparición de las tarjetas con opacidad, movimiento en Y, rotación y escala.
 anime.timeline({ easing: 'easeOutExpo' })
     .add({
         targets: '.card',
@@ -9,7 +10,8 @@ anime.timeline({ easing: 'easeOutExpo' })
         scale: [0, 1], // Inicialmente más pequeño y luego crece
     });
 
-// Función para animar las barras de resumen
+// Función para animar las barras de resumen según el plan seleccionado
+// Actualiza las barras de velocidad, almacenamiento y usuarios con animación.
 function updateBars(plan) {
     let velocidad = 0;
     let almacenamiento = 0;
@@ -59,16 +61,33 @@ function updateBars(plan) {
     });
 }
 
+// Función para seleccionar por defecto el Plan A al cargar
+// Aplica la clase 'selected' y agranda el Plan A al iniciar.
+function selectDefaultPlan() {
+    const defaultCard = document.querySelector('#planA');
+    defaultCard.classList.add('selected'); // Aplica la clase 'selected'
+    defaultCard.style.transform = 'scale(1.2)'; // Agranda el Plan A
+
+    // Actualizar las barras de acuerdo al Plan A
+    updateBars('A');
+}
+
 // Interacción de tarjetas
+// Permite que el usuario seleccione un plan y lo agrande, además de actualizar las barras correspondientes.
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {
         // Cambia la tarjeta activa
         const selectedCard = document.querySelector('.selected');
         if (selectedCard) {
             selectedCard.classList.remove('selected');
+            // Restauramos el tamaño original de la tarjeta que estaba seleccionada
+            selectedCard.style.transform = 'scale(1)';
         }
         card.classList.add('selected');
-
+        
+        // Agrandar la tarjeta seleccionada
+        card.style.transform = 'scale(1.2)'; // Ajusta el tamaño al hacer clic
+        
         // Obtener el plan seleccionado
         const plan = card.getAttribute('data-plan');
         
@@ -78,7 +97,7 @@ document.querySelectorAll('.card').forEach(card => {
         // Agregar animación de rebote al hacer clic
         anime({
             targets: card,
-            scale: [1, 1.4, 1],
+            scale: [1.2, 1.2], // Mantener el tamaño agrandado
             translateY: [0, -20, 0],
             rotate: [0, 10, 0],
             duration: 500,
@@ -86,3 +105,6 @@ document.querySelectorAll('.card').forEach(card => {
         });
     });
 });
+
+// Llamar a la función para seleccionar por defecto el Plan A al cargar
+window.addEventListener('load', selectDefaultPlan);
