@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animaciones Avanzadas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Componente de las tarjetas -->
+        <div class="cards">
+            <button class="card" id="planA" data-plan="A">Plan A</button>
+            <button class="card selected" id="planB" data-plan="B">Plan B</button>
+            <button class="card" id="planC" data-plan="C">Plan C</button>
+        </div>
+
+        <!-- Componente de resumen -->
+        <div class="summary">
+            <div class="bar">
+                <span>Velocidad</span>
+                <div class="fill" id="velocidad"></div>
+            </div>
+            <div class="bar">
+                <span>Almacenamiento</span>
+                <div class="fill" id="almacenamiento"></div>
+            </div>
+            <div class="bar">
+                <span>Usuarios</span>
+                <div class="fill" id="usuarios"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
