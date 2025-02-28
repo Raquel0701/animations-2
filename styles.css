@@ -4,7 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to right, #b440f2, #fad0c4);
+  background: linear-gradient(to right, #7980fd, #fad0c4);
   overflow: hidden;
 }
 
@@ -57,9 +57,10 @@ body {
 }
 
 .selected {
-  background: #edf107;
+  background: #4058f2;
   transform: scale(1.2);
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 /* Estilos de las barras de resumen */
@@ -74,14 +75,14 @@ body {
   margin: 5px auto;
   position: relative;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 20px;
 }
 
 .fill {
   position: absolute;
   height: 100%;
-  width: 0%; /* Valor inicial */
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  width: 0%;
+  background: linear-gradient(90deg, #6a11cb, #4058f2);
   transition: width 0.5s ease-in-out;
 }
 

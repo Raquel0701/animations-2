@@ -1,83 +1,84 @@
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(to right, #b440f2, #fad0c4);
-    overflow: hidden;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #7980fd, #fad0c4);
+  overflow: hidden;
 }
 
 .container {
-    text-align: center;
+  text-align: center;
 }
 
 .cards {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .card {
-    width: 250px;
-    padding: 20px;
-    background: white;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 250px;
+  padding: 20px;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .card .description {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
 }
 
 .card .price {
-    font-size: 18px;
-    font-weight: bold;
-    color: #27ae60;
+  font-size: 18px;
+  font-weight: bold;
+  color: #27ae60;
 }
 
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card:active {
-    transform: scale(0.95);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transform: scale(0.95);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 .selected {
-    background: #edf107;
-    transform: scale(1.2);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  background: #4058f2;
+  transform: scale(1.2);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 /* Estilos de las barras de resumen */
 .summary {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 .bar {
-    width: 300px;
-    height: 20px;
-    background: white;
-    margin: 5px auto;
-    position: relative;
-    overflow: hidden;
-    border-radius: 5px;
+  width: 300px;
+  height: 20px;
+  background: white;
+  margin: 5px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
 }
 .fill {
-    position: absolute;
-    height: 100%;
-    width: 0%; /* Valor inicial */
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
-    transition: width 0.5s ease-in-out;
+  position: absolute;
+  height: 100%;
+  width: 0%; 
+  background: linear-gradient(90deg, #6a11cb, #4058f2);
+  transition: width 0.5s ease-in-out;
 }
